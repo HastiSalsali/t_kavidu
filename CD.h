@@ -13,10 +13,12 @@ private:
     double playTime;
     string genre;
 public:
-    CD(string t = "", double c = 0.0, string a = "", int t = 0, double p = 0.0, string g = "");
-
+    CD (string nTitle = "N/A" , double nCost = 0.0, string nArtist = "N/A", int nTrack = 0, double nPlayTime = 0.0, string nGenre = "N/A");
+    
     virtual double markupPercent();
     virtual void report();
-
+    virtual void askUser();
+    
+    ~CD(){};
 };
 #endif

@@ -8,11 +8,11 @@ using namespace std;
 
 int Item::itemCount = 0;
 
-Item::Item(string t = "", double c = 0.0) {
+Item::Item(string nTitle, double nCost) {
     sku = itemCount++;
-    title = t;
-    cost = c;
-    recalcPrice();
+    title = nTitle;
+    cost = nCost;
+    price = 0;
 }
 
 int Item::getSKU() {
@@ -35,7 +35,7 @@ string Item::getTitle() {
     return title;
 }
 
-static int Item::getitemCount() {
+int Item::getitemCount() {
     return itemCount;
 }
 

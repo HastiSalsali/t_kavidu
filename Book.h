@@ -9,12 +9,15 @@ using namespace std;
 
 class Book : public Item {
 private:
-   string author;
-   string description;
+    string author;
+    string description;
 public:
-   Book(string t = "", double c = 0.0, string a = "", string d = "");
-
-   virtual double markupPercent();
-   virtual void report();
+    Book(string nTitle = "", double nCost = 0.0, string nAuthor = "", string nDscrb = "");
+    
+    virtual double markupPercent();
+    virtual void report();
+    virtual void askUser();
+    
+    ~Book(){};
 };
 #endif

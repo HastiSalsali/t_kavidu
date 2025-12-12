@@ -17,7 +17,7 @@ private:
 
 
 public:
-    Item(string t = "", double c = 0.0);    //Input title and cost with defult cases
+    Item(string nTitle = "", double nCost = 0.0);    //Input title and cost with defult cases
 
 
     int getSKU();            //to return info about the item instance
@@ -35,6 +35,9 @@ public:
 
     virtual double markupPercent() = 0;    //pure virtual function to return the markup percent for each type of function
     virtual void report() = 0;  //function for outputting report
+    virtual void askUser() = 0;
+    
+    virtual ~Item(){};
 };
 
 #endif

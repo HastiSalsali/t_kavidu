@@ -4,11 +4,11 @@ using namespace std;
 
 //CD class definitons
 
-CD:CD(string t = "", double c = 0.0, string a = "", int t = 0, double p = 0.0, string g = "") : Item(t, c) {
-    artist = a;
-    tracks = t;
-    playTime = p;
-    genre = g;
+CD::CD(string nTitle, double nCost, string nArtist, int nTrack, double nPlayTime, string nGenre) : Item(nTitle, nCost) {
+    artist = nArtist;
+    tracks = nTrack;
+    playTime = nPlayTime;
+    genre = nGenre;
 }
 
 double CD::markupPercent() {
@@ -16,18 +16,49 @@ double CD::markupPercent() {
 }
 
 void CD::report() {
-    cout << "SKU " << sku << " (CD)" << endl;
-    cout << "Number on hand:    " << quantity;
-    if (quantity < 10) {
+    cout << "SKU " << getSKU() << " (CD)" << endl;
+    cout << "Number on hand:    " << getQuantity();
+    if (getQuantity() < 10) {
         cout << "     (Low Inventory, Place Order)";
     }
-    cout << endl << "Cost:      $" << cost << endl;
-    cout << "Title: " << title << endl;
-    cout << "Price:         $" << price << endl;
-    cout << "Total $ value:          $" << (price * quantity) << endl;
+    cout << endl << "Cost:      $" << getCost() << endl;
+    cout << "Title: " << getTitle() << endl;
+    cout << "Price:         $" << getPrice() << endl;
+    cout << "Total $ value:          $" << (getPrice() * getQuantity()) << endl;
     cout << "Artist Name: " << artist << endl;
     cout << "Tracks: " << tracks << endl;
     cout << "Playing Time: " << playTime << endl;
     cout << "Genre: " << genre << endl;
     cout << "--------------------------" << endl;
 }
+
+void CD::askUser() {
+    string nTitle;
+    double nCost;
+    string nArtist;
+    int nTrack;
+    double nPlayTime;
+    string nGenre;
+    cout << "Enter title: ";
+    getline(cin, nTitle);
+    cout << endl << "Enter artist: ";
+    getline(cin, nArtist);
+    cout << endl  << "Enter number of tracks: ";
+    cin >> nTrack;
+    cout << endl << "Enter playing time: ";
+    cin >> nPlayTime;
+    cout << endl << "Enter genre: ";
+    cin.ignore();
+    getline(cin, nGenre);
+    cout << endl << "Enter cost: ";
+    cin >> nCost;
+    setTitle(nTitle);
+    setCost(nCost);
+    artist = nArtist;
+    tracks = nTrack;
+    playTime = nPlayTime;
+    genre = nGenre;
+    recalcPrice();
+}
+    
+    

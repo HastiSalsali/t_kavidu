@@ -13,9 +13,12 @@ private:
     double playTime;
     string genre;
 public:
-    DVD(string t = "", double c = 0.0, string d = "", string l = "", double p = 0.0, string g = "");
+    DVD(string nTitle = "", double nCost = 0.0, string nDirec = "", string nLead = "", double nPlayTime = 0.0, string nGenre = "");
 
     virtual double markupPercent();
     virtual void report();
+    virtual void askUser();
+    
+    ~DVD(){};
 };
 #endif
