@@ -141,7 +141,7 @@ void Inventory::sale() {
     double total = 0;
     do {
         if (numOrders >= 20) {
-            cout << "Maximum number of different items per sale reached." <<endl;
+            cout << left <<  "Maximum number of different items per sale reached." <<endl;
             flag = 't';
         }
         else {

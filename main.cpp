@@ -18,4 +18,8 @@ int main() {
  - fix cin for getline -> use cin.ignore()
  - fix memory leaks -> delete items in inventory destructor
  -add lower case for switch sratement
+ 
+ 
+ 
+ note: "fixed << setprecision(2) " makes the decimal places 2 for dollar amounts - i added one in the cd report function, make sure to add to others
  */

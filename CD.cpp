@@ -17,13 +17,13 @@ double CD::markupPercent() {
 
 void CD::report() {
     cout << "SKU " << getSKU() << " (CD)" << endl;
-    cout << "Number on hand:    " << getQuantity();
+    cout << left << setw(20) << "Number on hand:" << getQuantity();
     if (getQuantity() < 10) {
         cout << "     (Low Inventory, Place Order)";
     }
-    cout << endl << "Cost:      $" << getCost() << endl;
+    cout << endl << setw(20) << "Cost:" <<"$" << getCost() << endl;
     cout << "Title: " << getTitle() << endl;
-    cout << "Price:         $" << getPrice() << endl;
+    cout << fixed << setprecision(2) << "Price:         $" << getPrice() << endl;
     cout << "Total $ value:          $" << (getPrice() * getQuantity()) << endl;
     cout << "Artist Name: " << artist << endl;
     cout << "Tracks: " << tracks << endl;
